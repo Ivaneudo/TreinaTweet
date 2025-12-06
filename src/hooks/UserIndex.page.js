@@ -24,6 +24,7 @@ function UserIndex () {
   function sendTwitte (event) {
     event.preventDefault();
     setTweetList([...tweetList, tweet]);
+    setText('');
   }
 
   return {
