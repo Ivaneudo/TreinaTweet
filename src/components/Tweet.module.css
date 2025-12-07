@@ -5,6 +5,7 @@
     'avatar user' 
     'avatar text';
   gap: 4px 16px;
+  overflow-wrap: anywhere;
 }
 
 .avatar {
