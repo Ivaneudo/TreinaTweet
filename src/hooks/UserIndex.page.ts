@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 function UserIndex () {
   const [tweetList, setTweetList] = useState([]);
@@ -14,14 +14,14 @@ function UserIndex () {
     }
   }
   
-  function onTextChange (event) {
-    const text = event.target.value;  
+  function onTextChange (event: ChangeEvent<HTMLTextAreaElement>) {
+    const text: string = event.target.value;  
     if (text.length <= maxLength) {
       setText(text);
     }
   }
 
-  function sendTwitte (event) {
+  function sendTwitte (event: FormEvent) {
     event.preventDefault();
     setTweetList([...tweetList, tweet]);
     setText('');
