@@ -1,7 +1,12 @@
 import { formatDistanceToNow } from 'date-fns';
 import styles from './Tweet.module.css'
+import type { Tweet as tweetInterface } from '../types/tweet.interfaces.ts';
 
-function Tweet ({tweet}) {
+interface TweetProps {
+  tweet: tweetInterface;
+}
+
+function Tweet ({ tweet }: TweetProps) {
 
   const publishedToNew = formatDistanceToNow(new Date(tweet.date), {
     addSuffix: true

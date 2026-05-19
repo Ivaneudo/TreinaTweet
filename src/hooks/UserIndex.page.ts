@@ -1,20 +1,11 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-
-interface tweet {
-  date: Date,
-    text: String,
-    user: {
-      name: String,
-      username: String,
-      picture: String
-    }
-}
+import type { Tweet as tweetInterface } from '../types/tweet.interfaces.ts';
 
 function UserIndex () {
-  const [tweetList, setTweetList] = useState<tweet[]>([]);
+  const [tweetList, setTweetList] = useState<tweetInterface[]>([]);
   const [text, setText] = useState('');
   const maxLength = 125;
-  const tweet: tweet = {
+  const tweet: tweetInterface = {
     date: new Date(),
     text: text,
     user: {
