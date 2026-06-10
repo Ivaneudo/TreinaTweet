@@ -1,6 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
 import styles from './Tweet.module.css'
-import type { Tweet as tweetInterface } from '../types/tweet.interfaces.ts';
+import type { Tweet as tweetInterface } from '../../types/tweet.interfaces.js';
 
 interface TweetProps {
   tweet: tweetInterface;

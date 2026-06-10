@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import type { Tweet as tweetInterface } from '../types/tweet.interfaces.ts';
+import type { Tweet as tweetInterface } from '../../types/tweet.interfaces.js';
 
 function UserIndex () {
   const [tweetList, setTweetList] = useState<tweetInterface[]>([]);
