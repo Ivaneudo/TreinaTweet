@@ -18,13 +18,10 @@ function Tweet ({ tweet }: TweetProps) {
     <>
       <TweetContainer>
         <AvatarPost src={tweet.user.picture} alt='perfil'/>
-        {/* <img  className={styles.avatar} src={tweet.user.picture} alt="perfil"/> */}
         <User>
           <TextSpan variant='userName'>{tweet.user.name}</TextSpan>
           <TextSpan variant='userUserName'>{tweet.user.username}</TextSpan>
-          {/* <span className={styles.userUserName}>{tweet.user.username}</span> */}
           <TextSpan variant='date'> - {publishedToNew}</TextSpan>
-          {/* <span className={styles.date}> - {publishedToNew}</span> */}
         </User>
         <TweetTaxt>
           {tweet.text}
