@@ -1,10 +1,8 @@
-import styles from "./Index.module.css";
-import Tweet from '../../components/Tweet.js';
 import UserIndex from '../../../Application/hooks/UserIndex.page.js';
 import styled from '@emotion/styled';
 import { Postagem } from '../../UI/Post/Index.js';
-import { Button } from '../../components/button/index.js';
 import { Title } from "../../components/title/Index.js";
+import { TweetUI } from "../../UI/TweetList/Indix.js";
 
 export const ConteinerTweet = styled.div`
   display: grid;
@@ -23,39 +21,31 @@ export const ButtonContainer = styled.div`
 
 function Index() {
 
-  const { text, maxLength, onTextChange,sendTwitte, tweetList } = UserIndex();
+  const {
+    text, 
+    maxLength, 
+    onTextChange,
+    sendTwitte, 
+    tweetList 
+  } = UserIndex();
 
   return (
     <>
       <Title>TreinaTweet</Title>
+
+      {/* Renderiza o Avatar, TextArea, button e contador de caracter */}
       <Postagem
+        place={"O que está acontecendo?"}
         text={text} 
         onTextChange={onTextChange} 
         maxLength={maxLength}
+        sendTwitte={sendTwitte}
       />
-      <div>
-        <ButtonContainer>
-          <p>
-            {text.length}/{maxLength}
-          </p>
-          <Button
-            onClick={sendTwitte}
-            disabled={text.length === 0}
-          >
-            Tweet
-          </Button>
-        </ButtonContainer>
-      </div>
 
-      <ul className={styles.tweetList}>
-        {tweetList.map((tweet) => {
-          return (
-            <li className={styles.tweetListItem}>
-              <Tweet tweet={tweet} />
-            </li>
-          );
-        })}
-      </ul>
+      {/* Renderiza a list de posts */}
+      <TweetUI
+        List={tweetList}
+      />
     </>
   );
 }
